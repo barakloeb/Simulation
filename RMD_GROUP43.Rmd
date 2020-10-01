@@ -1,0 +1,98 @@
+---
+title: "group43"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+ 
+
+```
+
+
+
+we will need the following libraries: fitdistrplus, magrittr
+```{r libraries, include=FALSE,echo=FALSE}
+library(fitdistrplus)
+library(magrittr)
+```
+
+
+
+```{r generate}
+
+data1 <- read.csv(choose.files(),header=TRUE)
+data2 <- c(data1$Value)
+```
+
+
+```{r empirical plots}
+par(mfrow=c(1,3)) # defines 2 plots on the same window
+plot(data2,ylab="Sample values") # plot ( left graph )
+hist(data2, ylab="Frequency ") # histogram (right graph)
+boxplot(data2)
+```
+
+
+
+
+```{r fitting norm}
+normFit<-fitdist(data2,"norm") # fitting a normal distrbution 
+summary(normFit) # summary function displays the results 
+
+
+```
+
+
+```{r results="hide"}
+gammaFit<-fitdist(data2,"gamma") # fitting a normal distrbution 
+summary(gammaFit) # summary function displays the results 
+```
+
+
+```{r}
+expfit<-fitdist(data2,"exp") # fitting a normal distrbution 
+summary(expfit) # summary function displays the results 
+```
+
+```{r fitting exp, error=TRUE}
+expFit<-fitdist(normSamples,"exp") # fitting exponential distribution will not work
+```
+
+
+
+```{r}
+
+```
+
+
+```{r empirical plots2}
+
+```
+
+
+```{r}
+
+```
+
+
+```{r}
+
+
+```
+
+
+```{r}
+par(mfrow=c(2,2)) # manually define a 2X2 graph window 
+legendText<-c("norm","gamma","exp") # define legend text
+denscomp(list(normFit,gammaFit,expfit),legendtext=legendText) # histograms
+qqcomp(list(normFit,gammaFit,expfit),legendtext=legendText)  # qq plot
+cdfcomp(list(normFit,gammaFit,expfit),legendtext=legendText) # cdf plot
+ppcomp(list(normFit,gammaFit,expfit),legendtext=legendText) # pp plot
+```
+
+
+
+
