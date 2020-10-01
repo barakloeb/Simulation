@@ -1,1 +1,3 @@
 # Simulation
+This project is a project that summarizes the simulation course. The course aims to provide the tools and theoretical knowledge for building a simulation project. These include characterizing the system of the system, implementing the model using appropriate tools, and analyzing results.
+In this project we were asked to investigate the activities of the "Meirav Clinic", a breast health clinic. This clinic deals with medical diagnosis and early detection of breast cancer, the goal of the project is to optimize and increase the output of the imaging department and the purpose of the simulation was to examine various alternatives according to selected indices according to a budget of 100,000 NIS.
